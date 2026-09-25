@@ -50,7 +50,7 @@
             "siteKey": "",
             "secretKey": ""
         }
-    }
+    },
 	"dashBoard": {
 		"enable": false,
 		"expireVerifyCode": 300000,
