@@ -230,45 +230,14 @@ if (config.autoRestart) {
 	        
         catch (err) {
             console.log("Gmail token expired - skip");
-            return;
+                    accessToken = "skip";
 }
-	const transporter = nodemailer.createTransport({
-		host: 'smtp.gmail.com',
-		service: 'Gmail',
-		auth: {
-			type: 'OAuth2',
-			user: email,
-			clientId,
-			clientSecret,
-			refreshToken,
-			accessToken
-		}
-	});
-
+	    const transporter = null;
+    })();
 	async function sendMail({ to, subject, text, html, attachments }) {
-		const transporter = nodemailer.createTransport({
-			host: 'smtp.gmail.com',
-			service: 'Gmail',
-			auth: {
-				type: 'OAuth2',
-				user: email,
-				clientId,
-				clientSecret,
-				refreshToken,
-				accessToken
-			}
-		});
-		const mailOptions = {
-			from: email,
-			to,
-			subject,
-			text,
-			html,
-			attachments
-		};
-		const info = await transporter.sendMail(mailOptions);
-		return info;
+		        return;
 	}
+			
 
 	global.utils.sendMail = sendMail;
 	global.utils.transporter = transporter;
