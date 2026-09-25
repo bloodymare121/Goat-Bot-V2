@@ -233,7 +233,7 @@ if (config.autoRestart) {
                     accessToken = "skip";
 }
 	    const transporter = null;
-    })();
+	
 	async function sendMail({ to, subject, text, html, attachments }) {
 		        return;
 	}
