@@ -217,27 +217,11 @@ if (config.autoRestart) {
 }
 
 (async () => {
-	// ———————————————— SETUP MAIL ———————————————— //
-	const { gmailAccount } = config.credentials;
-	const { email, clientId, clientSecret, refreshToken } = gmailAccount;
-	const OAuth2 = google.auth.OAuth2;
-	const OAuth2_client = new OAuth2(clientId, clientSecret);
-	OAuth2_client.setCredentials({ refresh_token: refreshToken });
-	let accessToken;
-	try {
-		accessToken = await OAuth2_client.getAccessToken();
-	}
-	        
-            catch (err) {
-        console.log("Gmail token expired - skip");
-        accessToken = "skip";
-    }
+	// SETUP MAIL - DISABLED
+const transporter = { sendMail: async () => {} };
+async function sendMail() { return; }
 
-    const transporter = { sendMail: async () => {} };
-
-    async function sendMail({ to, subject, text, html, attachments }) {
-        return;
-	}
+    
 			
 
 	global.utils.sendMail = sendMail;
