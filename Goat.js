@@ -228,14 +228,15 @@ if (config.autoRestart) {
 		accessToken = await OAuth2_client.getAccessToken();
 	}
 	        
-        catch (err) {
-            console.log("Gmail token expired - skip");
-                    accessToken = "skip";
-}
-	    const transporter = null;
-	
-	async function sendMail({ to, subject, text, html, attachments }) {
-		        return;
+            catch (err) {
+        console.log("Gmail token expired - skip");
+        accessToken = "skip";
+    }
+
+    const transporter = { sendMail: async () => {} };
+
+    async function sendMail({ to, subject, text, html, attachments }) {
+        return;
 	}
 			
 
